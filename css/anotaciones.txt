@@ -1,0 +1,116 @@
+acomodar en celular el h2 que es lo de rosario
+servicios interior, exterior, impermeabilizaciones, intalacciones de aparatos
+
+crear img rodillo
+terminar footer
+crear iconos servicios
+
+crear paginas de servicios:interior, exterior, impermeabilizaciones, intalacciones de aparatos
+crear contacto
+crear sobre nosotros
+
+
+hacerlo responsive
+
+scroll por pantallas
+
+github pages
+
+
+responsive inicio:
+solucionar el menu responsive
+achicar un poco icono en el footer
+agrandar parte gris en footer
+agrandar iconos redes sociales
+
+git https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez
+
+
+
+https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Introduction
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+pasos para abrir la terminal de comandos
+win + R
+CMD
+intalar las dependencias
+
+
+codigo para mail con javascript y node.JavaScript
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+
+  // Obtener los datos del formulario
+  const formData = new FormData(this);
+
+  // Enviar los datos al servidor
+  fetch('/ruta/a/tu/servidor/backend', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error al enviar el formulario');
+    }
+    return response.json(); // Si el servidor devuelve JSON, de lo contrario, puedes cambiarlo
+  })
+  .then(data => {
+    // Manejar la respuesta del servidor (por ejemplo, mostrar un mensaje de éxito al usuario)
+    alert('¡Mensaje enviado con éxito!');
+    // Puedes redirigir o hacer cualquier otra acción después de enviar el formulario
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    // Manejar el error (por ejemplo, mostrar un mensaje de error al usuario)
+    alert('Hubo un problema al enviar el mensaje. Por favor, inténtalo nuevamente más tarde.');
+  });
+});
+
+
+const express = require('express');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.post('/ruta/a/tu/servidor/backend', (req, res) => {
+  const { name, email, message } = req.body;
+
+  // Configurar el transportador de correo
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'tu_correo@gmail.com',
+      pass: 'tu_contraseña'
+    }
+  });
+
+  // Configurar el correo
+  let mailOptions = {
+    from: 'tu_correo@gmail.com',
+    to: 'correo_destino@example.com',
+    subject: 'Mensaje de contacto desde tu sitio web',
+    text: `Nombre: ${name}\nCorreo electrónico: ${email}\nMensaje: ${message}`
+  };
+
+  // Enviar el correo
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error al enviar el correo:', error);
+      res.status(500).json({ message: 'Error al enviar el correo' });
+    } else {
+      console.log('Correo enviado:', info.response);
+      res.json({ message: 'Correo enviado exitosamente' });
+    }
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Servidor backend escuchando en http://localhost:${port}`);
+});
+
+

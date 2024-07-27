@@ -1,0 +1,191 @@
+.main-contacto{
+    margin-bottom: 20px;
+}
+.titulo{
+color: var(--azul-oscuro);
+padding: 15px 0 0 0 ;
+font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+text-transform: uppercase;
+text-rendering: optimizeLegibility;
+color: var(--azul-oscuro);
+letter-spacing: .15em;
+
+
+}
+.contacto{
+    padding: 30px 0;
+    width: 40%;
+    margin: 0 10%;
+}
+
+.cont-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.padre-form{
+
+    width:40%;
+    border-right: 2px solid black;
+}
+
+.form{
+    width: 70%;
+
+}
+
+.contacto-responsive{
+    display: none;
+}
+
+.form input{
+    padding: 10px;
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid var(--azul-oscuro);
+
+}
+
+.form textarea{
+    padding: 10px;
+    width: 100%;
+    margin: 20px 0;
+    height: 25vh;
+    border: 1px solid var(--azul-oscuro);
+}
+
+.button-29{
+    align-items: center;
+        appearance: none;
+        background-image: radial-gradient(100% 100% at 100% 0, var(--celeste) 0, var(--azul) 100%);
+        border: 0;
+        border-radius: 6px;
+        box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono",monospace;
+        height: 40px;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 12px;
+        padding-right: 12px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s,transform .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow,transform;
+        font-size: 15px;
+        fill: var(--blanco);
+        width: 40%;
+}
+
+.telefonos-contacto{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.telefono{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.telefono h3{
+    color: var(--azul-oscuro);
+}
+
+.nombres-socios{
+    margin: 8px 0;
+    list-style: none;
+}
+
+.num-tel{
+    margin: 8px 0;
+    list-style: none;
+}
+
+.num-tel li a{
+    text-decoration: none;
+    color: var(--azul-oscuro);
+}
+
+@media screen and (max-width:700px) {
+
+    .contacto{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .contacto-responsive{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--azul-oscuro);
+        width: 90%;
+        height: 2px;
+        font-size: 0;
+        margin: 40px 0 0 0;
+        background-color: var(--azul-oscuro);
+    }
+
+    .contacto p{
+        text-align: center;
+    }
+    .cont-form{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .padre-form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+    }
+
+    .form{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form input{
+        margin: 5px 0;
+        outline: none;
+    }
+
+    .form textarea{
+        margin: 5px 0;
+        outline: none;
+    }
+
+    .telefonos-contacto{
+        width: 100%;
+    }
+
+    .telefono{
+        margin: 10px;
+    }
+    
+}
